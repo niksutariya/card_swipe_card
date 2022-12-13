@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class AppUtils{
@@ -30,6 +31,45 @@ class AppUtils{
           shape: BoxShape.circle,
           color: isActive ? const Color(0XFF6BC4C9) : const Color(0XFFEAEAEA),
         ),
+      ),
+    );
+  }
+
+  static imageContainer({
+    String? imgUrl,
+    double? size,
+    double? height,
+    double? width,
+    BoxFit? fit,
+  }) {
+    return imgUrl != null || imgUrl != ""
+        ? CachedNetworkImage(
+      height: height,
+      width: width,
+      imageUrl: imgUrl ?? "",
+      fit: fit,
+      placeholder: (context, url) => const Center(
+        child: Padding(
+          padding: EdgeInsets.all(8),
+          child: CircularProgressIndicator(),
+        ),
+      ),
+      errorWidget: (context, url, error) => Container(
+        padding: const EdgeInsets.all(30),
+        color: Colors.grey.withOpacity(0.5),
+        child: Icon(
+          Icons.image,
+          color: Colors.white,
+          size: size ?? 0.0,
+        ),
+      ),
+    )
+        : Container(
+      color: Colors.grey.withOpacity(0.5),
+      child: Icon(
+        Icons.image,
+        color: Colors.white,
+        size: size ?? 0.0,
       ),
     );
   }

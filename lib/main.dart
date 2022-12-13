@@ -1,8 +1,11 @@
+import 'package:card_swipe_task/app_binding.dart';
 import 'package:card_swipe_task/utils/app_route.dart';
 import 'package:card_swipe_task/utils/app_strings.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(hoverColor: Colors.transparent, splashColor: Colors.transparent),
       debugShowCheckedModeBanner: false,
       title: AppString.appName,
+      initialBinding: AppBidding(),
       builder: (context, child) {
         return ScrollConfiguration(
           behavior: MyBehavior(),
@@ -33,8 +37,9 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      initialRoute: Routes.homeScreen,
+      initialRoute: Routes.splashScreen,
       getPages: Routes.pages,
+
     );
   }
 }

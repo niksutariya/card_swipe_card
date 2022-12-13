@@ -17,4 +17,5 @@ class AppString{
   static const String forStudents = "For Students";
   static const String depositAmount = "Deposit amount";
   static const String currentFlatmates = "Current flatmates";
+  static const String detailFinishMessage = "Card Detail Finished";
 }

@@ -1,5 +1,6 @@
-import 'package:card_swipe_task/example.dart';
+import 'package:card_swipe_task/module/home_screen/googlemap_screen.dart';
 import 'package:card_swipe_task/module/home_screen/home_screen.dart';
+import 'package:card_swipe_task/module/splash_screen/splash_screen.dart';
 import 'package:get/get.dart';
 
 mixin Routes {
@@ -8,17 +9,21 @@ mixin Routes {
 
   // get started
   static const String homeScreen = '/HomeScreen';
-  static const String examplePageWidget = '/ExamplePageWidget';
+  static const String splashScreen = '/SplashScreen';
+  static const String mapScreen = '/MapScreen';
 
   static List<GetPage<dynamic>> pages = [
     GetPage<dynamic>(
+      name: splashScreen,
+      page: () => const SplashScreen(),
+      transition: defaultTransition,
+    ),GetPage<dynamic>(
       name: homeScreen,
       page: () => HomeScreen(),
       transition: defaultTransition,
-    ),
-    GetPage<dynamic>(
-      name: examplePageWidget,
-      page: () => ExamplePageWidget(),
+    ),GetPage<dynamic>(
+      name: mapScreen,
+      page: () => MapScreen(),
       transition: defaultTransition,
     ),
   ];

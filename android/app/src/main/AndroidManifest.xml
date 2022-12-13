@@ -1,9 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.card_swipe_task">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="card_swipe_task"
+        android:label="CardSwipe"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCEDRYrsp9PomgPptkGCA6srId2V8SWBwo"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
